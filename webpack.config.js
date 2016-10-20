@@ -16,7 +16,7 @@ module.exports = {
   },
   entry: [
     'babel-polyfill',
-    './src/App.jsx'
+    './src/react/App.jsx'
   ],
   output: {
     path: __dirname + '/dist',
