@@ -1,7 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Popup from './Popup.jsx';
 
 ReactDOM.render(
-  <h1>Breadsheets!</h1>,
+  <Popup />,
   document.getElementById('breadsheets')
 );

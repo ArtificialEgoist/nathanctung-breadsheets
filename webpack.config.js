@@ -4,14 +4,20 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel',
+        include: [
+          __dirname + '/src'
+        ],
         exclude: /node_modules/,
         query: {
-          presets: ['react']
+          presets: ['es2015', 'react']
         }
       }
     ]
   },
-  entry: ['./src/App.jsx'],
+  entry: [
+    'babel-polyfill',
+    './src/App.jsx'
+  ],
   output: {
     path: __dirname + '/dist',
     filename: 'app.js'
