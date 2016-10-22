@@ -1,13 +1,12 @@
+var webpack = require('webpack');
+
 module.exports = {
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
+        loaders: ['babel?presets[]=es2015,presets[]=react'],
+        exclude: /node_modules/
       },
       {
         test: /\.html$/,
@@ -15,10 +14,10 @@ module.exports = {
       }
     ]
   },
-  entry: {
-    javascript: __dirname + '/src/react/App.jsx',
-    html: __dirname + '/src/popup.html'
-  },
+  entry: [
+    __dirname + '/src/react/App.jsx',
+    __dirname + '/src/popup.html'
+  ],
   output: {
     path: __dirname + '/dist',
     filename: 'app.js'
