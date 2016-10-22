@@ -20,6 +20,6 @@
   "permissions": [
     "activeTab",
     "storage",
-    "https://ajax.googleapis.com/"
+    "<all_urls>"
   ]
 }

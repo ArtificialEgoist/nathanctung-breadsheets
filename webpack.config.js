@@ -8,13 +8,17 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.html$/,
+        loader: 'file?name=[name].[ext]'
       }
     ]
   },
-  entry: [
-    'babel-polyfill',
-    './src/react/App.jsx'
-  ],
+  entry: {
+    javascript: __dirname + '/src/react/App.jsx',
+    html: __dirname + '/src/popup.html'
+  },
   output: {
     path: __dirname + '/dist',
     filename: 'app.js'
