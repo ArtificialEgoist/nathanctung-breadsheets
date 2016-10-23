@@ -52,8 +52,10 @@ export default class StorageUtil {
 	static deleteData(partition, key, callback) {
 		// Get specified partition
 		storage.get(partition, function(items) {
-			// Delete key from partition
-			delete items[partition][key];
+			// Delete key from partition if it exists
+			if (key && items[partition]) {
+				delete items[partition][key];
+			}
 			// Persist changes to storage
 			storage.set(items, function(items) {
 				console.info(`Deleted data for partition=${partition}, key=${key}`);
